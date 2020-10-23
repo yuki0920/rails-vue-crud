@@ -9,6 +9,13 @@ require("@rails/activestorage").start()
 require("channels")
 //= require materialize
 
+import Vue from 'vue'
+import App from './App.vue'
+
+const app = new Vue({
+  el: '#app',
+  render: h => h(App)
+})
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
