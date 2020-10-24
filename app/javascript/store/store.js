@@ -7,7 +7,9 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    books: []
+    books: [],
+    bookInfo: {},
+    bookInfoBool: false,
   },
   mutations: {
     fetchBooks(state) {
@@ -16,5 +18,21 @@ export default new Vuex.Store({
         response => {response.data.books.forEach(book => state.books.push(book))}, error => {console.log(error)
       });
     },
+    setBookInfo(state, id){
+      axios.get(`api/books/${id}.json`).then(response => {
+        state.bookInfo = response.data;
+        state.bookInfoBool = true;
+      });
+    },
+    deleteBook(state, id) {
+      axios.delete(`api/books/${id}`).then(
+        response => {
+          state.books = [];
+          state.bookInfo = '';
+          state.bookInfoBool = false;
+        },
+        error => console.log(error)
+      )
+    }
   }
 })
