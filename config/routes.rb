@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :books, only: %i[index]
 
   namespace :api do
-    resources :books, only: %i[index show]
+    resources :books, only: %i[index show create]
   end
 end
