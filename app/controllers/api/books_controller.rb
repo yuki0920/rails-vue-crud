@@ -30,6 +30,15 @@ module Api
       end
     end
 
+    def destroy
+      @book = Book.find(params[:id])
+      if @book.destroy
+        head :no_content
+      else
+        render json: @book.erros, status: :unprocessable_entity
+      end
+    end
+
     private
 
     def book_params
