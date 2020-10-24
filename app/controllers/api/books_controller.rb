@@ -21,6 +21,15 @@ module Api
       end
     end
 
+    def update
+      @book = Book.find(params[:id])
+      if @book.update(book_params)
+        head :no_content
+      else
+        render json: @book.errors, status: :unprocessable_entity
+      end
+    end
+
     private
 
     def book_params
