@@ -44,22 +44,17 @@
       return {
         bookInfo: {},
         bookInfoBool: false,
-        books: [],
+      }
+    },
+    computed: {
+      books() {
+        return this.$store.state.books
       }
     },
     mounted: function() {
-      this.fetchBooks();
+      this.$store.commit('fetchBooks');
     },
     methods: {
-      fetchBooks() {
-        axios.get('/api/books').then((response) => {
-          response.data.books.forEach(book =>
-          this.books.push(book)
-          )
-        }, (error) => {
-          console.log(error);
-        });
-      },
       setBookInfo(id){
         axios.get(`api/books/${id}.json`).then(response => {
           this.bookInfo = response.data;
