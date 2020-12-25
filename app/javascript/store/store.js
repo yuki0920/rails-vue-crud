@@ -19,7 +19,7 @@ export default new Vuex.Store({
       });
     },
     setBookInfo(state, id){
-      axios.get(`api/books/${id}.json`).then(response => {
+      axios.get(`api/books/${id}`).then(response => {
         state.bookInfo = response.data;
         state.bookInfoBool = true;
       });
