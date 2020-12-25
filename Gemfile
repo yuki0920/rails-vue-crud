@@ -46,4 +46,4 @@ end
 gem 'faker'
 gem 'materialize-sass'
 gem 'material_icons'
-gem 'haml'
+gem 'haml-rails'
