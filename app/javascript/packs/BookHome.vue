@@ -13,22 +13,9 @@
     <div class="row" v-show="bookInfoBool">
       <div class="col s12 m12">
         <div class="card blue-grey darken-1">
-          <div class="card-content white-text">
-            <span class="card-title">
-              【{{ bookInfo.title }}】
-            </span>
-            <div class="detail">
-              ・著者：{{ bookInfo.author }}
-            </div>
-            <div class="detail">
-              ・出版社：{{ bookInfo.publisher }}
-            </div>
-            <div class="detail">
-              ・ジャンル：{{ bookInfo.genre }}
-            </div>
-            <router-link :to="{path: `/edit/${bookInfo.id}`}" class="btn">本の編集</router-link>
-            <button class="btn #e53935 red darken-1" @click="deleteBook(bookInfo.id)">削除</button>
-          </div>
+           下記と同一
+          <!-- <book-card :book-info="bookInfo"></book-card> -->
+          <BookCard :book-info="bookInfo" />
         </div>
       </div>
     </div>
@@ -38,9 +25,13 @@
 <script>
   import axios from 'axios'
   import { mapState } from 'vuex'
+  import BookCard from './BookCard'
 
   export default {
     name: 'BookHome',
+    components: {
+      BookCard,
+    },
     computed: mapState([
       'books',
       'bookInfo',
