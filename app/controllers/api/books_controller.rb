@@ -1,7 +1,5 @@
 module Api
   class BooksController < ApplicationController
-    protect_from_forgery exept: %i[create]
-
     def index
       @books = Book.all
       render formats: :json

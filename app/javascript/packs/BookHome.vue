@@ -13,7 +13,7 @@
     <div class="row" v-show="bookInfoBool">
       <div class="col s12 m12">
         <div class="card blue-grey darken-1">
-           下記と同一
+           <!-- 下記と同一 -->
           <!-- <book-card :book-info="bookInfo"></book-card> -->
           <BookCard :book-info="bookInfo" />
         </div>
