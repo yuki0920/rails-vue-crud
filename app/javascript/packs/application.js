@@ -15,21 +15,24 @@ import axios from "axios"
 import VueAxiosPlugin from './plugins/vue-axios'
 import Router from '../router/router.js'
 import Store from '../store/store.js'
+import VueAxios from 'vue-axios'
+import { securedAxiosInstance, plainAxiosInstance } from '../backend/axios/axios'
 
-Vue.use(VueAxiosPlugin, { axios: axios })
+// Vue.use(VueAxiosPlugin, { axios: axios })
+Vue.config.productionTip = false
+Vue.use(VueAxios, {
+  secured: securedAxiosInstance,
+  plain: plainAxiosInstance
+})
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     el: '#app',
     router: Router,
     store: Store,
+    securedAxiosInstance,
+    plainAxiosInstance,
     render: h => h(App),
     });
   }
 )
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
