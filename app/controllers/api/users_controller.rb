@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
   protect_from_forgery except: %i(create)
 
   def create
+    user = User.new(user_params)
     if user.save
       payload = { user_id: user.id }
       session = JWTSessions::Session.new(payload: payload, refresh_by_access_allowed: true)
@@ -16,7 +17,7 @@ class Api::UsersController < ApplicationController
 
       render json: { csrf: tokens[:csrf] }
     else
-      render json: { error: user.errors.full_messages.join(' '), status: :unprocessable_entity }
+      render json: { error: user.errors.full_messages.join(' ') }, status: :unprocessable_entity
     end
   end
 
