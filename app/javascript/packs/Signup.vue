@@ -3,27 +3,26 @@
     <h1 class="#f3e5f5 purple lighten-5 center">Sign UP</h1>
     <form class="col" @submit.prevent="signup">
       <div class="text-red" v-if="error">{{ error }}</div>
-      <div class="row">
-        <div class="input-field">
-          <!-- class="validate"はmaterializeのAPI -->
-          <input placeholder="Name" type="text" class="validate" v-model="name" required="required">
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field">
-          <input placeholder="Email" type="text" class="validate" v-model="email" required="required">
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field">
-          <input placeholder="Password" type="password" class="validate" v-model="password" required="required">
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field">
-          <input placeholder="Password_confirmation" type="password" class="validate" v-model="password_confirmation" required="required">
-        </div>
-      </div>
+      <InputField
+        type="text"
+        placeholder="Name"
+        v-model="name"
+      />
+      <InputField
+        type="text"
+        placeholder="Email"
+        v-model="email"
+      />
+      <InputField
+        type="password"
+        placeholder="Password"
+        v-model="password"
+      />
+      <InputField
+        type="password"
+        placeholder="Password Confirmation"
+        v-model="password_confirmation"
+      />
 
       <button type="submit" class="btn waves-effect waves-light">Sign Up</button>
       <div><router-link to="/signin" class="btn link-grey">Sign In</router-link></div>
@@ -32,8 +31,12 @@
 </template>
 
 <script>
+  import InputField from './components/InputField'
   export default {
     name: 'Signup',
+    components: {
+      InputField
+    },
     data() {
       return {
         name: '',

@@ -4,16 +4,16 @@
     <form class="col" @submit.prevent="signin">
       <div class="text-red" v-if="error">{{ error }}</div>
 
-      <div class="row">
-        <div class="input-field">
-          <input placeholder="Email" type="text" class="validate" v-model="email" required="required">
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field">
-          <input placeholder="Password" type="password" class="validate" v-model="password" required="required">
-        </div>
-      </div>
+      <InputField
+        type="text"
+        placeholder="Email"
+        v-model="email"
+      />
+      <InputField
+        type="password"
+        placeholder="Password"
+        v-model="password"
+      />
 
       <button type="submit" class="btn waves-effect waves-light">Sign In</button>
       <div><router-link to="/signup" class="btn link-grey">Sign Up</router-link></div>
@@ -23,8 +23,12 @@
 
 <script>
   //　動作は，Signupコンポーネントと同じ。
+  import InputField from './components/InputField'
   export default {
     name: 'Signin',
+    components: {
+      InputField
+    },
     data() {
       return {
         email: '',
