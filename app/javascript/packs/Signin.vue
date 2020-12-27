@@ -15,7 +15,7 @@
         v-model="password"
       />
 
-      <button type="submit" class="btn waves-effect waves-light">Sign In</button>
+      <SubmitButton />
       <div><router-link to="/signup" class="btn link-grey">Sign Up</router-link></div>
     </form>
   </div>
@@ -24,10 +24,13 @@
 <script>
   //　動作は，Signupコンポーネントと同じ。
   import InputField from './components/InputField'
+  import SubmitButton from './components/SubmitButton'
+
   export default {
     name: 'Signin',
     components: {
-      InputField
+      InputField,
+      SubmitButton
     },
     data() {
       return {
