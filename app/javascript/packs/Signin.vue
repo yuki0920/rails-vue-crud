@@ -13,7 +13,11 @@
         placeholder="Password"
         v-model="password"
       />
-      <SubmitButton>Sign In</SubmitButton>
+      <SubmitButton
+        type="submit"
+      >
+        Sign In
+      </SubmitButton>
     </form>
   </div>
 </template>

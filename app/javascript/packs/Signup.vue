@@ -23,7 +23,11 @@
         placeholder="Password Confirmation"
         v-model="password_confirmation"
       />
-      <SubmitButton>Sign Up</SubmitButton>
+      <SubmitButton
+        type="submit"
+      >
+        Sign Up
+      </SubmitButton>
     </form>
   </div>
 </template>

@@ -3,7 +3,7 @@
   <!-- TODO: テキストのプリミティブな値をSlot化したい -->
   <div>
     <button
-      type="submit"
+      :type="type"
       class="btn waves-effect waves-light"
     >
       <slot>
@@ -15,6 +15,9 @@
 
 <script>
   export default {
-    name: 'SubmitButton'
+    name: 'SubmitButton',
+    props: {
+      type: { default: null }
+    }
   }
 </script>
