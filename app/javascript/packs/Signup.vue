@@ -9,7 +9,7 @@
         v-model="name"
       />
       <InputField
-        type="text"
+        type="email"
         placeholder="Email"
         v-model="email"
       />

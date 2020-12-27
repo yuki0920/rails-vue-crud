@@ -5,7 +5,7 @@
       <div class="text-red" v-if="error">{{ error }}</div>
 
       <InputField
-        type="text"
+        type="email"
         placeholder="Email"
         v-model="email"
       />
