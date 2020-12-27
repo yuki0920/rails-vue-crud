@@ -11,14 +11,11 @@ require("channels")
 
 import Vue from 'vue'
 import App from './App.vue'
-// import axios from "axios"
-// import VueAxiosPlugin from './plugins/vue-axios'
 import Router from '../router/router.js'
 import Store from '../store/store.js'
 import VueAxios from 'vue-axios'
 import { securedAxiosInstance, plainAxiosInstance } from '../backend/axios/axios'
 
-// Vue.use(VueAxiosPlugin, { axios: axios })
 Vue.config.productionTip = false
 Vue.use(VueAxios, {
   secured: securedAxiosInstance,

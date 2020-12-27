@@ -39,6 +39,12 @@
       createBook: function() {
         if (!this.book.title) return;
 
+        const csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        axios.defaults.headers.common = {
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": csrf_token
+          }
+
         axios.post('/api/books', { book: this.book })
           .then(response => {this.$router.push({ path: '/' });
           }, (error) => { console.log(error);
