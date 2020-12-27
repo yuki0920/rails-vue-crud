@@ -3,7 +3,6 @@
     <h1 class="#f3e5f5 purple lighten-5 center">Sign In</h1>
     <form class="col" @submit.prevent="signin">
       <div class="text-red" v-if="error">{{ error }}</div>
-
       <InputField
         type="email"
         placeholder="Email"
@@ -14,8 +13,7 @@
         placeholder="Password"
         v-model="password"
       />
-
-      <SubmitButton />
+      <SubmitButton>Sign In</SubmitButton>
     </form>
   </div>
 </template>

@@ -23,18 +23,20 @@
         placeholder="Password Confirmation"
         v-model="password_confirmation"
       />
-
-      <button type="submit" class="btn waves-effect waves-light">Sign Up</button>
+      <SubmitButton>Sign Up</SubmitButton>
     </form>
   </div>
 </template>
 
 <script>
   import InputField from './components/InputField'
+  import SubmitButton from './components/SubmitButton'
+
   export default {
     name: 'Signup',
     components: {
-      InputField
+      InputField,
+      SubmitButton
     },
     data() {
       return {

@@ -6,7 +6,9 @@
       type="submit"
       class="btn waves-effect waves-light"
     >
-      Sign In
+      <slot>
+        デフォルトテキスト
+      </slot>
     </button>
   </div>
 </template>
