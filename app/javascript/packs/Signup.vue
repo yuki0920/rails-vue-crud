@@ -25,7 +25,6 @@
       />
 
       <button type="submit" class="btn waves-effect waves-light">Sign Up</button>
-      <div><router-link to="/signin" class="btn link-grey">Sign In</router-link></div>
     </form>
   </div>
 </template>

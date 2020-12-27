@@ -16,7 +16,6 @@
       />
 
       <SubmitButton />
-      <div><router-link to="/signup" class="btn link-grey">Sign Up</router-link></div>
     </form>
   </div>
 </template>
