@@ -5,7 +5,8 @@
       <div class="text-red" v-if="error">{{ error }}</div>
       <div class="row">
         <div class="input-field">
-          <input placeholder="Name" type="text" class="validate" v-model="name" required="required"></br>
+          <!-- class="validate"はmaterializeのAPI -->
+          <input placeholder="Name" type="text" class="validate" v-model="name" required="required">
         </div>
       </div>
       <div class="row">

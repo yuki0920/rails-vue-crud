@@ -18,6 +18,7 @@ const plainAxiosInstance = axios.create({
   }
 })
 
+// NOTE: interceptorsは処理される前にリクエストを補足する
 securedAxiosInstance.interceptors.request.use(config => {
   const method = config.method.toUpperCase()
   if (method !== 'OPTIONS' && method !== 'GET') {
