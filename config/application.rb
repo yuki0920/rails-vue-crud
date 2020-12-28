@@ -36,5 +36,7 @@ module RailsVueBookshelf
       g.assets false
       g.helper false
     end
+
+    config.time_zone = 'Asia/Tokyo'
   end
 end
